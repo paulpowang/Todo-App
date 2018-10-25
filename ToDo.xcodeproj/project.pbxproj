@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		DA8D8957217D7FE700EBE011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D8956217D7FE700EBE011 /* AppDelegate.swift */; };
-		DA8D8959217D7FE700EBE011 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D8958217D7FE700EBE011 /* ListViewController.swift */; };
 		DA8D895C217D7FE700EBE011 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D895A217D7FE700EBE011 /* Main.storyboard */; };
 		DA8D895E217D7FE900EBE011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8D895D217D7FE900EBE011 /* Assets.xcassets */; };
 		DA8D8961217D7FE900EBE011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8D895F217D7FE900EBE011 /* LaunchScreen.storyboard */; };
@@ -17,6 +16,8 @@
 		DA8D8985217D804300EBE011 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D8984217D804300EBE011 /* ListTableViewController.swift */; };
 		DA8D8987217D86EA00EBE011 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D8986217D86EA00EBE011 /* NewItemViewController.swift */; };
 		DA8D8989217D86FB00EBE011 /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D8988217D86FB00EBE011 /* EditItemViewController.swift */; };
+		DAB3DB5A21812AFB005981E8 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3DB5921812AFB005981E8 /* ToDoCell.swift */; };
+		DAB3DB5E21816BD4005981E8 /* CompletedTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB3DB5D21816BD4005981E8 /* CompletedTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,6 @@
 /* Begin PBXFileReference section */
 		DA8D8953217D7FE700EBE011 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA8D8956217D7FE700EBE011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA8D8958217D7FE700EBE011 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		DA8D895B217D7FE700EBE011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA8D895D217D7FE900EBE011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA8D8960217D7FE900EBE011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +53,8 @@
 		DA8D8984217D804300EBE011 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		DA8D8986217D86EA00EBE011 /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 		DA8D8988217D86FB00EBE011 /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
+		DAB3DB5921812AFB005981E8 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		DAB3DB5D21816BD4005981E8 /* CompletedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				DA8D8956217D7FE700EBE011 /* AppDelegate.swift */,
-				DA8D8958217D7FE700EBE011 /* ListViewController.swift */,
 				DA8D895A217D7FE700EBE011 /* Main.storyboard */,
 				DA8D895D217D7FE900EBE011 /* Assets.xcassets */,
 				DA8D895F217D7FE900EBE011 /* LaunchScreen.storyboard */,
@@ -112,6 +113,8 @@
 				DA8D8984217D804300EBE011 /* ListTableViewController.swift */,
 				DA8D8986217D86EA00EBE011 /* NewItemViewController.swift */,
 				DA8D8988217D86FB00EBE011 /* EditItemViewController.swift */,
+				DAB3DB5921812AFB005981E8 /* ToDoCell.swift */,
+				DAB3DB5D21816BD4005981E8 /* CompletedTaskViewController.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -266,8 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA8D8985217D804300EBE011 /* ListTableViewController.swift in Sources */,
-				DA8D8959217D7FE700EBE011 /* ListViewController.swift in Sources */,
+				DAB3DB5A21812AFB005981E8 /* ToDoCell.swift in Sources */,
 				DA8D8989217D86FB00EBE011 /* EditItemViewController.swift in Sources */,
+				DAB3DB5E21816BD4005981E8 /* CompletedTaskViewController.swift in Sources */,
 				DA8D8987217D86EA00EBE011 /* NewItemViewController.swift in Sources */,
 				DA8D8957217D7FE700EBE011 /* AppDelegate.swift in Sources */,
 			);

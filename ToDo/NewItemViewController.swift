@@ -17,7 +17,8 @@ class NewItemViewController: UIViewController {
     @IBAction func saveButton(_ sender: Any) {
         
         if (inputTextField.text != ""){
-            toDoList.append(inputTextField.text!)
+            let newDist = ["task": inputTextField.text, "isComplete": false] as [String : Any]
+            toDoList.append(newDist)
             UserDefaults.standard.set(toDoList, forKey: "ToDoList")
             inputTextField.text = ""
             

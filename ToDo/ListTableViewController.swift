@@ -8,7 +8,12 @@
 
 import UIKit
 
-var toDoList = ["hihi", "hello"]
+
+let TASK = "task" //toDoList reference 1
+let ISCOMPLETE = "isComplete" //toDoList reference 2
+let COMPLETE_LIST = "CompletedList" //for isCompleteToDoList key in UserDefault
+var toDoList = [[TASK: "hihi", ISCOMPLETE : false]]
+var isCompleteToDoList: [[String:Any]] = [[:]]
 
 class ListTableViewController: UITableViewController {
 
@@ -18,21 +23,16 @@ class ListTableViewController: UITableViewController {
     //let storeList = UserDefaults.standard.set(toDoList, forKey: "ToDoList")
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
         listTableView.dataSource = self
         listTableView.delegate = self
-        toDoList = UserDefaults.standard.stringArray(forKey: "ToDoList") ?? ["hihi", "hello"]
+    
+        toDoList = UserDefaults.standard.object(forKey: "ToDoList") as![[String:Any]]
         
+        isCompleteToDoList = UserDefaults.standard.object(forKey: COMPLETE_LIST) as![[String:Any]]
     }
 
     // MARK: - Table view data source
@@ -49,22 +49,26 @@ class ListTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell", for: indexPath) as! ToDoCell
 
         // Configure the cell...
-        cell.textLabel!.text = toDoList[indexPath.row]
-
+        cell.taskLabel!.text = toDoList[indexPath.row][TASK] as? String
+        cell.toDoListIndex = indexPath.row 
+        cell.isComplete = toDoList[indexPath.row][ISCOMPLETE] as? Bool
+        
+        if toDoList[indexPath.row][ISCOMPLETE] as! Bool {
+            cell.doneLabel.text = "Done"
+            cell.taskCompleteButtonColor.backgroundColor = UIColor.blue
+        }else{
+            cell.doneLabel.text = ""
+            cell.taskCompleteButtonColor.backgroundColor = UIColor.lightGray
+        }
+        
+        
         return cell
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
     
     // Override to support editing the table view.
@@ -73,26 +77,10 @@ class ListTableViewController: UITableViewController {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-        /*else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    */
+        
     }
     
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
     override func viewDidAppear(_ animated: Bool) {
         listTableView.reloadData()
     }
@@ -107,13 +95,8 @@ class ListTableViewController: UITableViewController {
                 let navVC = segue.destination as! UINavigationController
                 let editVC = navVC.viewControllers.first as! EditItemViewController
                 
-                //let text:String = toDoList[indexPath.row]
-                //print(text)
-                editVC.originalText = toDoList[indexPath.row]
+                editVC.originalText = toDoList[indexPath.row][TASK] as! String
                 editVC.listIndex = indexPath.row
-                //let editViewController = segue.destination as! EditItemViewController
-                //editViewController.inputTextField.text = toDoList[indexPath.row]
-                //editViewController.listIndex = indexPath.row
                 
                 
             }

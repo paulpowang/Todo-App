@@ -21,7 +21,7 @@ class EditItemViewController: UIViewController {
         
         if (inputTextField.text != originalText){
             //toDoList.append(inputTextField.text!)
-            toDoList[listIndex!] = inputTextField.text!
+            toDoList[listIndex!]["task"] = inputTextField.text!
             //inputTextField.text = ""
             
             //dismiss current view
