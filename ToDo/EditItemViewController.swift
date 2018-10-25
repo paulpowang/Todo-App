@@ -20,9 +20,10 @@ class EditItemViewController: UIViewController {
     @IBAction func saveButton(_ sender: Any) {
         
         if (inputTextField.text != originalText){
-            //toDoList.append(inputTextField.text!)
+            
             toDoList[listIndex!]["task"] = inputTextField.text!
-            //inputTextField.text = ""
+            
+            UserDefaults.standard.set(toDoList, forKey: "ToDoList")
             
             //dismiss current view
             dismiss(animated: true, completion: nil)
