@@ -4,25 +4,20 @@
 
 The following **required** user stories are complete:
 
-
-
-- [ ] A user should be able to see all uncompleted tasks in a UITableView
+- [x] A user should be able to see all uncompleted tasks in a UITableView
 - [x] A user should be able to create new tasks
 - [x] A user should be able to edit a task
-- [ ] A user should be able to mark a task as complete
-- [ ] A user should be able to see all completed tasks in a UITableView
+- [x] A user should be able to mark a task as complete
+- [x] A user should be able to see all completed tasks in a UITableView
 - [x] A user should be able to close and reopen the app without loosing any tasks
-
-
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/paulpowang/codepath_week1_fix_demo03/blob/master/fix_demo_02.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/paulpowang/Todo-App/blob/master/src/todoapp_01.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
-
 
 Grading:
 - 60%: All user stories are implemented and working.
