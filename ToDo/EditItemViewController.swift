@@ -11,11 +11,9 @@ import UIKit
 class EditItemViewController: UIViewController {
 
     
-    
     @IBOutlet weak var inputTextField: UITextField!
     var listIndex: Int?
     var originalText: String?
-    
     
     @IBAction func saveButton(_ sender: Any) {
         
@@ -72,8 +70,6 @@ class EditItemViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-
     
 
 }

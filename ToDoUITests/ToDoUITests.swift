@@ -29,6 +29,37 @@ class ToDoUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        
     }
+    
+    func testCellNumberRemainTheSameAfterEditCellCancel(){
+        let app = XCUIApplication()
+        let table = app.tables.element(boundBy: 0)
+        let cellcount = table.cells.count
+        
+        let tablesQuery = app.tables
+        tablesQuery.staticTexts["hello"].tap()
+        let editItemNavigationBar = app.navigationBars["Edit Item"]
+        editItemNavigationBar.buttons["Cancel"].tap()
+        
+        XCTAssertEqual(table.cells.count, cellcount)
+        
+    }
+    
+    func testCellTextRemainSameAfterEditCellCancel(){
+        let app = XCUIApplication()
+        let tablesQuery = app.tables
+        let orginalText = tablesQuery.staticTexts["hello"].value as! String
+        tablesQuery.staticTexts["hello"].tap()
+        let editItemNavigationBar = app.navigationBars["Edit Item"]
+        editItemNavigationBar.buttons["Cancel"].tap()
+        let newText = tablesQuery.staticTexts["hello"].value as! String
+        
+        XCTAssertEqual(newText, orginalText)
+        
+    }
+    
+    
 
 }

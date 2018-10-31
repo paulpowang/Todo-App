@@ -20,8 +20,6 @@ class ToDoCell: UITableViewCell {
     var isComplete: Bool!
     
     
-    
-    
     @IBAction func taskCompleteButton(_ sender: UIButton) {
         
         if !isComplete {
@@ -37,21 +35,10 @@ class ToDoCell: UITableViewCell {
             UserDefaults.standard.set(toDoList, forKey: "ToDoList")
             UserDefaults.standard.set(isCompleteToDoList, forKey: COMPLETE_LIST)
             isComplete = true
-        }/*else{
-            doneLabel.text = ""
-            taskCompleteButtonColor.backgroundColor = UIColor.lightGray
-            toDoList[toDoListIndex][ISCOMPLETE] = false
-            
-            isComplete = false
-        }*/
-        
-        
+        }
         
         
     }
-    
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

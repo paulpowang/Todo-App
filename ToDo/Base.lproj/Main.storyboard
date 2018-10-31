@@ -162,6 +162,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do List" id="cqq-6l-GMM">
+                        <barButtonItem key="leftBarButtonItem" title="Clear" id="OzO-xv-ozs">
+                            <connections>
+                                <action selector="clearList:" destination="PIH-Ec-fbQ" id="Rhs-xd-Ph1"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add" id="KXK-NH-NQa">
                             <connections>
                                 <segue destination="nzk-kz-ReY" kind="presentation" id="qzh-mt-DqK"/>
@@ -237,6 +242,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hjb-fy-iyc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VR3-5Q-T6l">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

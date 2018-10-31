@@ -19,9 +19,7 @@ class ListTableViewController: UITableViewController {
 
     
     @IBOutlet var listTableView: UITableView!
-    
-    //let storeList = UserDefaults.standard.set(toDoList, forKey: "ToDoList")
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +32,6 @@ class ListTableViewController: UITableViewController {
         
         isCompleteToDoList = UserDefaults.standard.object(forKey: COMPLETE_LIST) as![[String:Any]]
     }
-
-    // MARK: - Table view data source
-/*
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return toDoList.count
-    }*/
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -68,17 +59,16 @@ class ListTableViewController: UITableViewController {
         return cell
     }
     
-
-
-    
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
+    @IBAction func clearList(_ sender: Any) {
+        
+        toDoList = [[TASK: "Empty List", ISCOMPLETE : false]]
+        UserDefaults.standard.set(toDoList, forKey: "ToDoList")
+        tableView.reloadData()
+        
         
     }
+    
+    
     
 
     override func viewDidAppear(_ animated: Bool) {
@@ -101,8 +91,6 @@ class ListTableViewController: UITableViewController {
                 
             }
         }
-        
-        
         
     }
 
